@@ -7,47 +7,73 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         app:cardCornerRadius="10dp"
         >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+
             android:orientation="horizontal">
             <ImageView
-                android:id="@+id/ivLogoTeam"
+                android:id="@+id/ivImageMotor"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:src="@drawable/ic_launcher_background"
+                android:layout_marginRight="10dp"
+                android:scaleType="center"
                 />
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_gravity="center"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:elevation="2dp"
+                android:weightSum="2"
                 >
+
                 <TextView
-                    android:id="@+id/tvNamaTeam"
+                    android:id="@+id/tvNameMotor"
+                    android:maxLines="2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nama Team"
+                    android:text="Nama Motor"
                     android:textSize="22sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                     />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/labelPriceMotor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Harga : Rp. "
+                        android:textColor="#000000"
+                        />
+                    <TextView
+                        android:id="@+id/tvPriceMotor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Harga Motor"
+                        android:layout_toRightOf="@+id/labelPriceMotor"
+                        android:textColor="#000000"
+                        />
+                </RelativeLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    android:layout_gravity="center"
-                    android:gravity="center"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom"
                     >
                     <Button
                         android:id="@+id/btnShare"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="5dp"
-                        android:backgroundTint="#5F9eA0"
+                        android:backgroundTint="@color/lightblue"
                         android:textAllCaps="true"
 
                         android:text="Share"/>
@@ -55,15 +81,11 @@
                         android:id="@+id/btnDetail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="#5F9eA0"
+                        android:backgroundTint="@color/lightblue"
                         android:textAllCaps="true"
                         android:text="Detail"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-
-
-
 </LinearLayout>

@@ -41,14 +41,17 @@ public class MotorcycleAdapter extends RecyclerView.Adapter<MotorcycleAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull MotorcycleAdapter.ViewHolder viewHolder, int i){
-        Glide.with(context).load(getMotorcycleModels().get(i).getLogoTeam()).into(viewHolder.ivLogoTeam);
-        viewHolder.tvNamaTeam.setText(getMotorcycleModels().get(i).getNamaTeam());
+        Glide.with(context).load(getMotorcycleModels().get(i).getImageMotor()).into(viewHolder.ivLogoTeam);
+        viewHolder.tvNamaTeam.setText(getMotorcycleModels().get(i).getNameMotor());
+        viewHolder.tvPriceMotor.setText(getMotorcycleModels().get(i).getPriceMotor());
         viewHolder.btnDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent moveIntent = new Intent(context, DetailActivity.class);
-                moveIntent.putExtra("namaTeam", getMotorcycleModels().get(i).getNamaTeam());
-                moveIntent.putExtra("logoTeam", getMotorcycleModels().get(i).getLogoTeam());
+                moveIntent.putExtra("nameMotor", getMotorcycleModels().get(i).getNameMotor());
+                moveIntent.putExtra("imageMotor", getMotorcycleModels().get(i).getImageMotor());
+                moveIntent.putExtra("descMotor",getMotorcycleModels().get(i).getDescMotor());
+                moveIntent.putExtra("priceMotor",getMotorcycleModels().get(i).getPriceMotor());
                 context.startActivity(moveIntent);
             }
         });
@@ -58,9 +61,10 @@ public class MotorcycleAdapter extends RecyclerView.Adapter<MotorcycleAdapter.Vi
             public void onClick(View v) {
                 Intent share = new Intent(Intent.ACTION_SEND);
                 share.setType("text/plain");
-                String shareSubject = getMotorcycleModels().get(i).getNamaTeam();
+                String shareSubject = getMotorcycleModels().get(i).getNameMotor();
+                String shareBody = getMotorcycleModels().get(i).getNameMotor()+"\nHarga : Rp. "+ getMotorcycleModels().get(i).getPriceMotor()+"\n" +getMotorcycleModels().get(i).getDescMotor();
                 share.putExtra(Intent.EXTRA_SUBJECT, shareSubject);
-                share.putExtra(Intent.EXTRA_TEXT, shareSubject);
+                share.putExtra(Intent.EXTRA_TEXT, shareBody);
                 context.startActivity(Intent.createChooser(share, "Share Using"));
             }
         });
@@ -73,13 +77,14 @@ public class MotorcycleAdapter extends RecyclerView.Adapter<MotorcycleAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         private ImageView ivLogoTeam;
-        private TextView tvNamaTeam;
+        private TextView tvNamaTeam,tvPriceMotor;
         private Button btnDetail, btnShare;
 
         public ViewHolder(@NonNull View itemView){
             super(itemView);
-            ivLogoTeam = itemView.findViewById(R.id.ivLogoTeam);
-            tvNamaTeam = itemView.findViewById(R.id.tvNamaTeam);
+            ivLogoTeam = itemView.findViewById(R.id.ivImageMotor);
+            tvNamaTeam = itemView.findViewById(R.id.tvNameMotor);
+            tvPriceMotor = itemView.findViewById(R.id.tvPriceMotor);
             btnDetail = itemView.findViewById(R.id.btnDetail);
             btnShare = itemView.findViewById(R.id.btnShare);
         }

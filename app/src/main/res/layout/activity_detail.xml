@@ -1,37 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".DetailActivity"
-    android:layout_margin="10dp"
-    android:orientation="vertical">
+    >
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
         <ImageView
-            android:id="@+id/ivCoverTeam"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/ic_launcher_background"
+            android:id="@+id/ivCoverMotor"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:src="@drawable/image1"
+            android:scaleType="fitXY"
             />
 
         <TextView
-            android:id="@+id/tvNamaTeam"
+            android:id="@+id/tvNameMotor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Motor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/labelPriceMotor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:text="Harga : "
+                android:textStyle="bold"
+                android:textColor="#000000"
+                />
+            <TextView
+                android:id="@+id/tvPriceMotor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Harga Motor"
+                android:textSize="17sp"
+                android:layout_toRightOf="@+id/labelPriceMotor"
+                android:textColor="#000000"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/labelDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description : "
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            />
+        <TextView
+            android:id="@+id/tvDescMotor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:text="Nama Team"
-            android:textAlignment="center"
-            android:textStyle="bold" />
+            android:text="Description Motor"
+            android:textSize="13sp"
+            android:justificationMode="inter_word"
+            android:textColor="#000000"
+            />
     </LinearLayout>
-    <TextView
-        android:id="@+id/tvDesc"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Description"
-        />
-</LinearLayout>
+
+</ScrollView>

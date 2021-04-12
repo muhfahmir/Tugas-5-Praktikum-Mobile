@@ -1,23 +1,41 @@
 package com.fti.recyclerview;
 
 public class MotorcycleModel {
-    private String namaTeam;
-    private int logoTeam;
+    private String nameMotor;
+    private String priceMotor;
+    private int imageMotor;
+    private String descMotor;
 
-    public String getNamaTeam() {
-        return namaTeam;
+    public String getDescMotor() {
+        return descMotor;
     }
 
-    public void setNamaTeam(String namaTeam) {
-        this.namaTeam = namaTeam;
+    public void setDescMotor(String descMotor) {
+        this.descMotor = descMotor;
     }
 
-    public int getLogoTeam() {
-        return logoTeam;
+    public String getPriceMotor() {
+        return priceMotor;
     }
 
-    public void setLogoTeam(int logoTeam) {
-        this.logoTeam = logoTeam;
+    public void setPriceMotor(String priceMotor) {
+        this.priceMotor = priceMotor;
+    }
+
+    public String getNameMotor() {
+        return nameMotor;
+    }
+
+    public void setNameMotor(String nameMotor) {
+        this.nameMotor = nameMotor;
+    }
+
+    public int getImageMotor() {
+        return imageMotor;
+    }
+
+    public void setImageMotor(int imageMotor) {
+        this.imageMotor = imageMotor;
     }
 
 }
