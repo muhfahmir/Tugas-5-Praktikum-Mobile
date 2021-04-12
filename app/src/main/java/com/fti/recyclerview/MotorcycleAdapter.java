@@ -41,8 +41,8 @@ public class MotorcycleAdapter extends RecyclerView.Adapter<MotorcycleAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull MotorcycleAdapter.ViewHolder viewHolder, int i){
-        Glide.with(context).load(getMotorcycleModels().get(i).getImageMotor()).into(viewHolder.ivLogoTeam);
-        viewHolder.tvNamaTeam.setText(getMotorcycleModels().get(i).getNameMotor());
+        Glide.with(context).load(getMotorcycleModels().get(i).getImageMotor()).into(viewHolder.ivThumbnailmotor);
+        viewHolder.tvNameMotor.setText(getMotorcycleModels().get(i).getNameMotor());
         viewHolder.tvPriceMotor.setText(getMotorcycleModels().get(i).getPriceMotor());
         viewHolder.btnDetail.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,14 +76,14 @@ public class MotorcycleAdapter extends RecyclerView.Adapter<MotorcycleAdapter.Vi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private ImageView ivLogoTeam;
-        private TextView tvNamaTeam,tvPriceMotor;
+        private ImageView ivThumbnailmotor;
+        private TextView tvNameMotor,tvPriceMotor;
         private Button btnDetail, btnShare;
 
         public ViewHolder(@NonNull View itemView){
             super(itemView);
-            ivLogoTeam = itemView.findViewById(R.id.ivImageMotor);
-            tvNamaTeam = itemView.findViewById(R.id.tvNameMotor);
+            ivThumbnailmotor = itemView.findViewById(R.id.ivImageMotor);
+            tvNameMotor = itemView.findViewById(R.id.tvNameMotor);
             tvPriceMotor = itemView.findViewById(R.id.tvPriceMotor);
             btnDetail = itemView.findViewById(R.id.btnDetail);
             btnShare = itemView.findViewById(R.id.btnShare);
