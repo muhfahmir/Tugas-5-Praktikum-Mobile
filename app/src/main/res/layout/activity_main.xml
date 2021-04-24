@@ -9,11 +9,24 @@
     android:orientation="vertical"
     >
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_team_list"
+    <FrameLayout
+        android:id="@+id/main_frame"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        >
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/main_navbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:layout_gravity="bottom"
+        app:menu="@menu/item_menu"
+        >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 
 </LinearLayout>

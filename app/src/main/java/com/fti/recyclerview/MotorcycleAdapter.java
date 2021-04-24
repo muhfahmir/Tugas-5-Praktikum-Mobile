@@ -20,7 +20,8 @@ public class MotorcycleAdapter extends RecyclerView.Adapter<MotorcycleAdapter.Vi
     private Context context;
     private ArrayList<MotorcycleModel> motorcycleModels;
 
-    public MotorcycleAdapter(Context context) {
+    public MotorcycleAdapter(ArrayList<MotorcycleModel> listData, Context context) {
+        this.motorcycleModels = listData;
         this.context = context;
     }
 
